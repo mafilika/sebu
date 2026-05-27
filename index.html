@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Magweni Civil & Logistics</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:#07131f;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    /* ========================= */
+    /* NAVBAR */
+    /* ========================= */
+
+    .navbar{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(5,12,20,0.95);
+      backdrop-filter:blur(10px);
+      padding:20px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo h1{
+      font-size:1.5rem;
+      font-weight:900;
+      line-height:1;
+    }
+
+    .logo span{
+      color:#4da3ff;
+      font-size:0.8rem;
+      letter-spacing:2px;
+      font-weight:700;
+    }
+
+    nav{
+      display:flex;
+      gap:28px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#fff;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#4da3ff;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#005bea,#3d8bfd);
+      color:#fff;
+      padding:14px 28px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+      box-shadow:0 10px 25px rgba(0,91,234,0.25);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    /* ========================= */
+    /* HERO */
+    /* ========================= */
+
+    .hero{
+      width:100%;
+      min-height:100vh;
+      background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+      position:relative;
+      display:flex;
+      align-items:center;
+      padding:140px 7%;
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to right,
+        rgba(4,10,18,0.95),
+        rgba(4,10,18,0.55)
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:760px;
+    }
+
+    .small-title{
+      color:#4da3ff;
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:15px;
+      font-size:0.9rem;
+    }
+
+    .hero-content h1{
+      font-size:4.2rem;
+      line-height:1.1;
+      margin-bottom:25px;
+      font-weight:900;
+    }
+
+    .hero-content h1 span{
+      color:#4da3ff;
+    }
+
+    .hero-text{
+      color:#d5d5d5;
+      line-height:1.9;
+      font-size:1.05rem;
+      margin-bottom:35px;
+      max-width:650px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn-secondary{
+      border:2px solid #4da3ff;
+      color:#fff;
+      padding:14px 28px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn-secondary:hover{
+      background:#4da3ff;
+      color:#07131f;
+    }
+
+    /* ========================= */
+    /* ABOUT */
+    /* ========================= */
+
+    .about{
+      padding:110px 7%;
+      background:#0d1c2c;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:25px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.35);
+    }
+
+    .about-content h2{
+      font-size:2.8rem;
+      margin-bottom:20px;
+    }
+
+    .about-content p{
+      color:#d1d1d1;
+      line-height:1.9;
+      margin-bottom:30px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .about-card{
+      background:#13263d;
+      padding:25px;
+      border-radius:20px;
+      border-left:4px solid #4da3ff;
+    }
+
+    .about-card h3{
+      color:#4da3ff;
+      margin-bottom:10px;
+    }
+
+    /* ========================= */
+    /* SERVICES */
+    /* ========================= */
+
+    .services{
+      padding:110px 7%;
+      background:#07131f;
+    }
+
+    .section-heading{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-heading h2{
+      font-size:2.8rem;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .service-card{
+      background:#13263d;
+      border-radius:25px;
+      overflow:hidden;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      border-color:#4da3ff;
+    }
+
+    .service-card img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+    }
+
+    .service-content{
+      padding:30px;
+    }
+
+    .service-content h3{
+      margin-bottom:15px;
+      color:#4da3ff;
+      font-size:1.4rem;
+    }
+
+    .service-content p{
+      color:#d7d7d7;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    /* ========================= */
+    /* PROJECTS */
+    /* ========================= */
+
+    .projects{
+      padding:110px 7%;
+      background:#0d1c2c;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .project-card{
+      overflow:hidden;
+      border-radius:25px;
+      position:relative;
+    }
+
+    .project-card img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      transition:0.4s;
+    }
+
+    .project-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .project-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        transparent
+      );
+      display:flex;
+      align-items:flex-end;
+      padding:25px;
+    }
+
+    .project-overlay h3{
+      font-size:1.4rem;
+    }
+
+    /* ========================= */
+    /* CONTACT */
+    /* ========================= */
+
+    .contact{
+      padding:110px 7%;
+      background:#07131f;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+    }
+
+    .contact-left h2{
+      font-size:2.8rem;
+      margin-bottom:20px;
+    }
+
+    .contact-left p{
+      color:#d1d1d1;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .contact-box{
+      background:#13263d;
+      padding:25px;
+      border-radius:20px;
+      margin-bottom:20px;
+      border-left:4px solid #4da3ff;
+    }
+
+    .contact-box h3{
+      color:#4da3ff;
+      margin-bottom:10px;
+    }
+
+    .contact-right form{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .contact-right input,
+    .contact-right textarea{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:15px;
+      background:#13263d;
+      color:#fff;
+      font-family:'Montserrat',sans-serif;
+    }
+
+    .submit-btn{
+      text-align:center;
+    }
+
+    /* ========================= */
+    /* FOOTER */
+    /* ========================= */
+
+    footer{
+      padding:40px 7%;
+      text-align:center;
+      background:#040b14;
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+
+    footer p{
+      color:#4da3ff;
+      margin-top:10px;
+    }
+
+    /* ========================= */
+    /* WHATSAPP FLOAT */
+    /* ========================= */
+
+    .whatsapp-float{
+      position:fixed;
+      width:65px;
+      height:65px;
+      bottom:25px;
+      right:25px;
+      background:#25d366;
+      color:#fff;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:2rem;
+      text-decoration:none;
+      z-index:1000;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.1);}
+      100%{transform:scale(1);}
+    }
+
+    /* ========================= */
+    /* RESPONSIVE */
+    /* ========================= */
+
+    @media(max-width:991px){
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      nav{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-content h1{
+        font-size:3rem;
+      }
+
+      .about,
+      .contact{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .hero{
+        padding-top:180px;
+      }
+
+      .hero-content h1{
+        font-size:2.3rem;
+      }
+
+      .section-heading h2,
+      .about-content h2,
+      .contact-left h2{
+        font-size:2rem;
+      }
+
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .btn-primary,
+      .btn-secondary{
+        width:100%;
+        text-align:center;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      <h1>MAGWENI</h1>
+      <span>CIVIL & LOGISTICS</span>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="https://wa.me/27794143579"
+       target="_blank"
+       class="btn-primary">
+
+      Book Now
+
+    </a>
+
+  </header>
+
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <p class="small-title">
+        PROFESSIONAL CONSTRUCTION COMPANY
+      </p>
+
+      <h1>
+        Building Modern <br>
+        Spaces With <span>Authority</span>
+      </h1>
+
+      <p class="hero-text">
+        Magweni Civil & Logistics delivers
+        professional building, plastering,
+        ceiling, plumbing and painting services
+        across Gauteng with trusted workmanship
+        and premium project execution.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="https://wa.me/27794143579"
+           target="_blank"
+           class="btn-primary">
+
+          Request Quote
+
+        </a>
+
+        <a href="#services"
+           class="btn-secondary">
+
+          View Services
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1400&auto=format&fit=crop"
+         alt="Construction">
+
+
+    <div class="about-content">
+
+      <p class="small-title">
+        ABOUT COMPANY
+      </p>
+
+      <h2>
+        Trusted Construction & Civil Specialists.
+      </h2>
+
+      <p>
+        Magweni Civil & Logistics is based in
+        Bronkhorstspruit, Gauteng and provides
+        professional construction solutions for
+        residential and commercial clients.
+        We focus on quality workmanship,
+        reliability and premium finishing.
+      </p>
+
+      <div class="about-grid">
+
+        <div class="about-card">
+
+          <h3>Reliable Team</h3>
+
+          <p>
+            Skilled workmanship with professional execution.
+          </p>
+
+        </div>
+
+        <div class="about-card">
+
+          <h3>Quality Finishing</h3>
+
+          <p>
+            Modern construction standards and durable results.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <div class="section-heading">
+
+      <p class="small-title">
+        OUR SERVICES
+      </p>
+
+      <h2>
+        Professional Construction Solutions
+      </h2>
+
+    </div>
+
+
+    <div class="services-grid">
+
+      <div class="service-card">
+
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop"
+             alt="Building">
+
+        <div class="service-content">
+
+          <h3>Building</h3>
+
+          <p>
+            Residential and commercial building
+            solutions with trusted workmanship.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1400&auto=format&fit=crop"
+             alt="Painting">
+
+        <div class="service-content">
+
+          <h3>Painting</h3>
+
+          <p>
+            Interior and exterior painting
+            with premium finishing standards.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1400&auto=format&fit=crop"
+             alt="Plastering">
+
+        <div class="service-content">
+
+          <h3>Plastering</h3>
+
+          <p>
+            Smooth professional plastering
+            for modern structures and renovations.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1400&auto=format&fit=crop"
+             alt="Ceiling">
+
+        <div class="service-content">
+
+          <h3>Ceiling Installation</h3>
+
+          <p>
+            Modern ceiling installations
+            for homes and commercial spaces.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="service-card">
+
+        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1400&auto=format&fit=crop"
+             alt="Plumbing">
+
+        <div class="service-content">
+
+          <h3>Plumbing</h3>
+
+          <p>
+            Professional plumbing installations,
+            maintenance and repair services.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- PROJECTS -->
+
+  <section class="projects" id="projects">
+
+    <div class="section-heading">
+
+      <p class="small-title">
+        FEATURED PROJECTS
+      </p>
+
+      <h2>
+        Projects Built With Excellence
+      </h2>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1400&auto=format&fit=crop"
+             alt="Project">
+
+        <div class="project-overlay">
+
+          <h3>Modern Residential Project</h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1400&auto=format&fit=crop"
+             alt="Project">
+
+        <div class="project-overlay">
+
+          <h3>Commercial Ceiling Installation</h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1400&auto=format&fit=crop"
+             alt="Project">
+
+        <div class="project-overlay">
+
+          <h3>Luxury Finishing & Painting</h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="contact-left">
+
+      <p class="small-title">
+        CONTACT COMPANY
+      </p>
+
+      <h2>
+        Let’s Build Your Next Project.
+      </h2>
+
+      <p>
+        Contact Magweni Civil & Logistics
+        for professional construction,
+        plastering, plumbing and painting services.
+      </p>
+
+
+      <div class="contact-box">
+
+        <h3>Phone Number</h3>
+
+        <p>079 414 3579</p>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <h3>Location</h3>
+
+        <p>Bronkhorstspruit, Gauteng</p>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <h3>Services</h3>
+
+        <p>
+          Building • Painting • Plastering • Ceiling • Plumbing
+        </p>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="contact-right">
+
+      <form>
+
+        <input type="text" placeholder="Full Name">
+
+        <input type="email" placeholder="Email Address">
+
+        <input type="text" placeholder="Phone Number">
+
+        <textarea rows="6"
+                  placeholder="Tell us about your project"></textarea>
+
+        <a href="https://wa.me/27794143579"
+           target="_blank"
+           class="btn-primary submit-btn">
+
+          Submit Through WhatsApp
+
+        </a>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>MAGWENI CIVIL & LOGISTICS</h2>
+
+    <p>
+      Building • Painting • Plastering • Ceiling • Plumbing
+    </p>
+
+  </footer>
+
+
+
+  <!-- WHATSAPP FLOAT -->
+
+  <a href="https://wa.me/27794143579"
+     class="whatsapp-float"
+     target="_blank">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+  </a>
+
+</body>
+</html>
